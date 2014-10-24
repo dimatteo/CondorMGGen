@@ -1,0 +1,33 @@
+#************************************************************
+#*                    MadGraph5_aMC@NLO                     *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 1.0.0                 2011-04-02         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+import model sm
+import model EffDMxi_UFO --modelname
+# Define multiparticle labels
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+define w = w+ w-
+# Specify process(es) to run
+generate p p > chi chi~ TEMPLATEBOS D1=0 D2=0 D3=0 D4=0 D5=0 D6=0 D7=0 D8=0 D9=0 D10=0 D11=0 D12=0 D13=0 D14=0 ,TEMPLATEBOS > j j @0
+add process p p > chi chi~ TEMPLATEBOS j D1=0 D2=0 D3=0 D4=0 D5=0 D6=0 D7=0 D8=0 D9=0 D10=0 D11=0 D12=0 D13=0 D14=0 ,TEMPLATEBOS > j j @1
+# Output processes to MadEvent directory
+output x1TEMPLATEXI_TEMPLATEBOS

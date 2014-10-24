@@ -1,0 +1,14 @@
+Executable  = runjobs.sh
+Universe  = vanilla
+Error = /scratch4/dimatteo/condor/condor_mg/logs_lhev2/DMChiChibar_monoTEMPLATEBOS_mChiTEMPLATEMDM_TEMPLATEDX_xiTEMPLATEXI_8TeV_madgraph_xqcutTEMPLATEXQCUT_$(Process).err
+Output  = /scratch4/dimatteo/condor/condor_mg/logs_lhev2/DMChiChibar_monoTEMPLATEBOS_mChiTEMPLATEMDM_TEMPLATEDX_xiTEMPLATEXI_8TeV_madgraph_xqcutTEMPLATEXQCUT_$(Process).out
+Log = /scratch4/dimatteo/condor/condor_mg/logs_lhev2/DMChiChibar_monoTEMPLATEBOS_mChiTEMPLATEMDM_TEMPLATEDX_xiTEMPLATEXI_8TeV_madgraph_xqcutTEMPLATEXQCUT_$(Process).log
+Input = /dev/null
+GetEnv = True
+Requirements = Arch == "X86_64"
+Arguments = "$(Process) DMChiChibar_monoTEMPLATEBOS_mChiTEMPLATEMDM_TEMPLATEDX_xiTEMPLATEXI_8TeV_madgraph_xqcutTEMPLATEXQCUT"
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT_OR_EVICT
+transfer_input_files = proc_card_TEMPLATEDX_xiTEMPLATEXI_TEMPLATEBOS.dat,run_card_xqcutTEMPLATEXQCUT.dat,param_card_mDMTEMPLATEMDM_xiTEMPLATEXI.dat
++AccountingGroup        = "group_cmsuser.dimatteo"
+Queue 1
