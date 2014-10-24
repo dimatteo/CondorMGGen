@@ -11,7 +11,7 @@ events in a proper way.
 Core files
 
 1. `runjobs.sh`
-⋅⋅* the main executable. this is what is being executed by the condor job. 
+ * the main executable. this is what is being executed by the condor job. 
 1. `run_card_template.dat`
 ⋅⋅* this is the madgraph run card, where run setup are decided. tweak the file to change the number of generated events, turning on/off the matching, apply gen level cuts, ecc... 
 1. `proc_card_mg5_template.dat`
